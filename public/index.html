@@ -1,12 +1,49 @@
 <html>
     <head>
-        <title>Rock</title>
+        <title>Play RPS or RPSLS</title>
         <!-- Link to your script file(s) and CSS in here somewhere -->
+        <link rel="stylesheet" href="styles.css" />
+        <script src="scripts.js"></script>
     </head>
     <body>
-
+        <h3><a href="rules.html">Rules!</a></h3>
     <!-- Your interface markup goes here -->
     <!-- For interface examples, look in the `/examples/` directory in the root of your starter code repo. -->
-
+        <div id="game">
+            <input type="radio" name="game" id="rps" value="Rock Paper Scissors" onClick="showChoices()" checked />
+            <label for="rps">Play rock paper scissors</label>
+            <input type="radio" name="game" id="rpsls" value="rpsls" onClick="showChoices()"/>
+            <label for="rpsls">Play rock paper scissors lizard spock</label>
+            <input type="checkbox" name="npc" id="opponent" value="opponent" onClick="showChoices()"/>
+            <label for="opponent">Play against an npc</label>
+        </div>
+        <br>
+        <div id="rpsChoices" class="hidden">
+            <input type="radio" name="choice" id="rock" value="rock" checked />
+            <label for="rock">ROCK</label>
+            <br />
+            <input type="radio" name="choice" id="paper" value="paper" />
+            <label for="paper">PAPER</label>
+            <br />
+            <input type="radio" name="choice" id="scissors" value="scissors" />
+            <label for="scissors">SCISSORS</label>
+            <br />
+        </div>
+        <div id="rpslsChoices" class="hidden">
+            <input type="radio" name="choice" id="lizard" value="lizard" />
+            <label for="lizard">LIZARD</label>
+            <br />
+            <input type="radio" name="choice" id="spock" value="spock" />
+            <label for="spock">SPOCK</label>
+            <br />
+        </div>
+        <div id="submit">
+            <button id="play" type="submit" onClick="play()">Play</button>
+            <button id="restart" type="submit" onClick="restart()">Restart</button>
+        </div>
     </body>
+        <div id="results" class="hidden">
+            <h3>Result:</h3>
+            <p id="result">You're not supposed to see this</p>
+        </div>
 </html>

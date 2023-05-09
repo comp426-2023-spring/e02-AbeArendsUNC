@@ -1,8 +1,9 @@
-body {
+
+.shown {
+    visibility: visible;
+
 }
 
-h1 {
-}
-
-p {
+.hidden {
+    visibility: hidden;
 }
